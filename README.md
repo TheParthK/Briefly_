@@ -1,10 +1,10 @@
 # Briefly
 
-## Screenshots
-
 ## Description
 
 Welcome to Briefly, the ultimate news app designed specifically for the youth with shorter attention spans! We understand that keeping up with current events can be challenging in a fast-paced world. That's why we've created a unique and engaging experience that combines a Tinder-like interface with captivating background music, ensuring you stay entertained while staying informed.
+
+## Screenshots
 
 <div>
     <img src="https://github.com/TheParthK/Briefly_/assets/95091403/981b0f60-84b0-4987-8168-106b57d405ae" alt="Image 1" width="250"/>
