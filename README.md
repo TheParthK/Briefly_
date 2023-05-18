@@ -37,7 +37,4 @@ Welcome to Briefly, the ultimate news app designed specifically for the youth wi
 - **Breaking News Alerts:** Don't miss out on important updates! Briefly provides breaking news alerts, notifying you instantly of significant events happening around the world.
 
 
-![1](https://github.com/TheParthK/Briefly_/assets/95091403/5c7d214e-b413-46de-a6a9-82edb537df33)
-![2](https://github.com/TheParthK/Briefly_/assets/95091403/4a47541c-9965-4905-8f1e-c0dd4c390de6)
-
 
