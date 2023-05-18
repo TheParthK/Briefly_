@@ -18,7 +18,11 @@
 		</data>
 		<key>flutter_assets/NOTICES.Z</key>
 		<data>
-		nqE1pAqWY89UcQfiuCg2cHi8Kxs=
+		s1i2Ne+/mGOhVOSRmaXIHYnZ140=
+		</data>
+		<key>flutter_assets/assets/Grand%20Eug%C3%A8ne%20-%20Bye-Bye.mp3</key>
+		<data>
+		G2jAJ879Ni7StpmnBAQ8yXmKpN4=
 		</data>
 		<key>flutter_assets/assets/SoundBar.json</key>
 		<data>
@@ -58,7 +62,7 @@
 		</data>
 		<key>flutter_assets/kernel_blob.bin</key>
 		<data>
-		sFcx06HTaPDyVIt4Xyt3OyrEpUc=
+		eQQONhbcrWKVL9HatZSdDHvZdSs=
 		</data>
 		<key>flutter_assets/packages/cupertino_icons/assets/CupertinoIcons.ttf</key>
 		<data>
@@ -93,7 +97,14 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			j8K9GbCl6Nx2yRplTYoUfraIBolv/SKCdDTOfI7l9Bc=
+			Ixt8XpU01hPSIXrPqWFpMuIDdboyfyqIZ1rm5OTq4wc=
+			</data>
+		</dict>
+		<key>flutter_assets/assets/Grand%20Eug%C3%A8ne%20-%20Bye-Bye.mp3</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			Hk89WWv+HhbcGups4P3FvfMeC9KpPof/BFB83R89loU=
 			</data>
 		</dict>
 		<key>flutter_assets/assets/SoundBar.json</key>
@@ -163,7 +174,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			VS+bwhFsMUtb7WUv1z/AvPo/sPGskk00WM1X8D1tCVY=
+			TBQM+4d0fl7NyqutfxMD0T3hBE+vC8BpXz15GE8Qxts=
 			</data>
 		</dict>
 		<key>flutter_assets/packages/cupertino_icons/assets/CupertinoIcons.ttf</key>

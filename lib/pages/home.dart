@@ -1,7 +1,8 @@
+import 'dart:math';
 import 'dart:ui';
-
 import 'package:briefly/models/news_model.dart';
 import 'package:briefly/services/api_service.dart';
+import 'package:briefly/services/music_library.dart';
 import 'package:briefly/widgets/card.dart';
 import 'package:card_swiper/card_swiper.dart';
 import 'package:flutter/cupertino.dart';
@@ -9,6 +10,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:lottie/lottie.dart';
+import 'package:just_audio/just_audio.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({super.key});
@@ -21,18 +23,43 @@ class _HomePageState extends State<HomePage> {
   // static const imgLink = 'https://scontent-bom1-2.cdninstagram.com/v/t51.2885-15/329317951_1043593799935199_2295232219652093670_n.jpg?stp=dst-jpg_e35_p720x720&_nc_ht=scontent-bom1-2.cdninstagram.com&_nc_cat=111&_nc_ohc=URKGXuy_do0AX92xErD&edm=ABmJApABAAAA&ccb=7-5&ig_cache_key=MzAzNzM3OTM0ODY3OTU4NjQwOQ%3D%3D.2-ccb7-5&oh=00_AfBxnQ-EAVf3oRO7jGfxeYVedrUQS1Lwsi967dtg2DsvAg&oe=6440165B&_nc_sid=6136e7';
   String searchTerm = 'technology';
   APIservice client = APIservice();
-  TextEditingController searchBarController = TextEditingController();
+  final TextEditingController _searchBarController = TextEditingController();
+  final SwiperController _swiperController = SwiperController();
+
+  final AudioPlayer _audioPlayer = AudioPlayer();
+
+
+  setAudio(int index)async{
+    await _audioPlayer.setUrl(MusicLibrary().music[index]);
+  }
+
+  void playPauseRadio(){
+    if(_audioPlayer.playing){
+      setState(() {
+        _audioPlayer.pause();
+      });
+    } else {
+      setAudio(Random().nextInt(MusicLibrary().music.length));
+      setState(() {
+        _audioPlayer.play();
+      });
+    }
+    print(_audioPlayer.playing);
+  }
 
   @override
   void initState() {
     super.initState();
+    // setAudio(Random().nextInt(MusicLibrary().music.length));
   }
 
   void searchTopic(){
     setState(() {
-      searchTerm = searchBarController.text;
+    _audioPlayer.play;
+      searchTerm = _searchBarController.text;
+      _swiperController.move(0, animation: false);
     });
-    searchBarController.clear();
+    _searchBarController.clear();
     FocusManager.instance.primaryFocus?.unfocus();
   }
 
@@ -96,7 +123,7 @@ class _HomePageState extends State<HomePage> {
                                   const SizedBox(width: 5,),
                                   Expanded(
                                     child: TextField(
-                                      controller: searchBarController,
+                                      controller: _searchBarController,
                                       cursorColor: const Color.fromARGB(255, 16, 16, 16),
                                       decoration: InputDecoration(
                                         border: InputBorder.none,
@@ -130,6 +157,7 @@ class _HomePageState extends State<HomePage> {
                               List<NewsModel>? news = snapshot.data;
                               return Swiper.children(
                                 layout: SwiperLayout.STACK,
+                                controller: _swiperController,
                                 loop: false,
                                 itemWidth: size.width - 10,
                                 axisDirection: AxisDirection.left,
@@ -147,17 +175,28 @@ class _HomePageState extends State<HomePage> {
                       SizedBox(
                         height: 20,
                         child: Center(
-                          child: Row(
-                            mainAxisSize: MainAxisSize.min,
-                            children:  [
-                              const Icon(CupertinoIcons.music_note_2, size: 12,),
-                              const SizedBox(width: 3,),
-                              const Text('BBC Radio London', style: TextStyle(fontSize: 12),),
-                              const SizedBox(width: 1,),
-                              LottieBuilder.asset(
-                                'assets/SoundBar.json',
-                                )
-                            ],
+                          child: GestureDetector(
+                            onTap: playPauseRadio,
+                            child: _audioPlayer.playing?Row(
+                              mainAxisSize: MainAxisSize.min,
+                              children:  [
+                                const Icon(CupertinoIcons.music_note_2, size: 12,),
+                                const SizedBox(width: 3,),
+                                const Text('Brielfy. Radio', style: TextStyle(fontSize: 12),),
+                                const SizedBox(width: 1,),
+                                LottieBuilder.asset(
+                                  'assets/SoundBar.json',
+                                  )
+                              ],
+                            ):
+                            Row(
+                              mainAxisSize: MainAxisSize.min,
+                              children:  const[
+                                Icon(CupertinoIcons.nosign, size: 12,),
+                                SizedBox(width: 3,),
+                                Text('Radio OFF', style: TextStyle(fontSize: 12),),
+                              ],
+                            ),
                           ),
                         ),
                       ),
