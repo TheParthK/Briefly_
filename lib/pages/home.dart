@@ -21,7 +21,7 @@ class HomePage extends StatefulWidget {
 
 class _HomePageState extends State<HomePage> {
   // static const imgLink = 'https://scontent-bom1-2.cdninstagram.com/v/t51.2885-15/329317951_1043593799935199_2295232219652093670_n.jpg?stp=dst-jpg_e35_p720x720&_nc_ht=scontent-bom1-2.cdninstagram.com&_nc_cat=111&_nc_ohc=URKGXuy_do0AX92xErD&edm=ABmJApABAAAA&ccb=7-5&ig_cache_key=MzAzNzM3OTM0ODY3OTU4NjQwOQ%3D%3D.2-ccb7-5&oh=00_AfBxnQ-EAVf3oRO7jGfxeYVedrUQS1Lwsi967dtg2DsvAg&oe=6440165B&_nc_sid=6136e7';
-  String searchTerm = 'technology';
+  String searchTerm = 'cars';
   APIservice client = APIservice();
   final TextEditingController _searchBarController = TextEditingController();
   final SwiperController _swiperController = SwiperController();
