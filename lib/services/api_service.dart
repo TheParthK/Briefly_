@@ -8,7 +8,7 @@ import 'package:http/http.dart';
 class APIservice{
     Future<List<NewsModel>> getArticle(String topic) async{
       final endPointURL = 
-        "https://newsapi.org/v2/everything?q=${topic!=''?topic:'tech'}&apiKey=8b4c461c9d8344b1bcba9b618bf09e87";
+        "https://newsapi.org/v2/everything?q=${topic!=''?topic:'tech'}&apiKey=[YOUR API KEY]";
       Response res = await get(Uri.parse(endPointURL));
       // checking for 200 status code
       if(res.statusCode == 200){
